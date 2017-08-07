@@ -1,14 +1,14 @@
 import * as jsonService from '../services/jsonholder';
 
 export default {
-  namespace: 'posts',
+  namespace: 'ablums',
   state: {
-    postsList: [],
+    ablumsList: [],
     showProgress: true,
   },
   reducers: {
-    save(state, { payload: { postsList, showProgress } }) {
-      return { ...state, postsList, showProgress };
+    save(state, { payload: { ablumsList, showProgress } }) {
+      return { ...state, ablumsList, showProgress };
     },
     resetSpinner(state) {
       return { ...state, showProgress: true };
@@ -16,15 +16,15 @@ export default {
   },
   effects: {
     *fetch({ payload: { query } }, { call, put }) {
-      const { data } = yield call(jsonService.getPostsList);
+      const { data } = yield call(jsonService.getAlbums);
       if (!data.data) return;
-      yield put({ type: 'save', payload: { postsList: data.data, showProgress: false } });
+      yield put({ type: 'save', payload: { ablumsList: data.data, showProgress: false } });
     },
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/') {
+        if (pathname === '/albums') {
           dispatch({ type: 'resetSpinner' });
           dispatch({ type: 'fetch', payload: query });
         }

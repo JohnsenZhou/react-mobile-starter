@@ -26,7 +26,12 @@ function RouterConfig({ history, app }) {
     {
       path: '/albums',
       name: 'Ablums',
-      component: Ablums,
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          registerModel(app, require('./models/ablums'));
+          cb(null, require('./routes/Ablums'));
+        });
+      },
     },
     {
       path: '/users',

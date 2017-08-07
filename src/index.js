@@ -1,5 +1,6 @@
 import dva from 'dva';
 import createLoading from 'dva-loading';
+import './assets/css/reset.css';
 import './index.css';
 
 // 1. Initialize

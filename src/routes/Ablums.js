@@ -1,19 +1,28 @@
 import React from 'react';
 import { connect } from 'dva';
+import { CircularProgress } from 'material-ui/Progress';
 import Layout from '../components/MainLayout/Layout';
+import AlbumsList from '../components/Albums/AlbumsList';
 
-function Ablums() {
+function Ablums({ ablums }) {
+  const albumsListProps = {
+    albumsList: ablums.ablumsList,
+  };
   return (
     <Layout>
-      <div>skljfskdjfkldsjf</div>
+      <div className="normal">
+        <ul>
+          <AlbumsList {...albumsListProps} />
+        </ul>
+      </div>
+      { ablums.showProgress ? <CircularProgress className="my-progress" /> : ''}
     </Layout>
   );
 }
 
 function mapStateToProps(state) {
-  const loading = state.loading.models.posts;
-  const posts = { ...state.posts, loading };
-  return { posts };
+  const ablums = { ...state.ablums };
+  return { ablums };
 }
 
 export default connect(mapStateToProps)(Ablums);
