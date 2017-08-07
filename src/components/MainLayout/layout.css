@@ -1,0 +1,20 @@
+.root {
+  width: 100%;
+}
+
+.flex {
+  flex: 1;
+}
+.appBar {
+    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+    border: 0;
+    color: white;
+}
+.title a{
+  height: 30px;
+  padding-left: 1.5em;
+  line-height: 30px;
+  color: #5e5e5e;
+  text-decoration: none;
+  vertical-align: text-bottom;
+}
