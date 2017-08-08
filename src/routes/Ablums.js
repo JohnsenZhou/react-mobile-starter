@@ -4,12 +4,12 @@ import { CircularProgress } from 'material-ui/Progress';
 import Layout from '../components/MainLayout/Layout';
 import AlbumsList from '../components/Albums/AlbumsList';
 
-function Ablums({ ablums }) {
+function Ablums({ location, ablums }) {
   const albumsListProps = {
     albumsList: ablums.ablumsList,
   };
   return (
-    <Layout>
+    <Layout {...location}>
       <div className="normal">
         <ul>
           <AlbumsList {...albumsListProps} />

@@ -26,6 +26,7 @@ class ButtonAppBar extends Component {
       appTitle: '主页',
       openDrawer: false,
     };
+    console.log(this.props);
   }
 
   setTitle = (num) => {

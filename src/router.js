@@ -36,7 +36,12 @@ function RouterConfig({ history, app }) {
     {
       path: '/users',
       name: 'Users',
-      component: Ablums,
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          registerModel(app, require('./models/users'));
+          cb(null, require('./routes/Users'));
+        });
+      },
     },
   ];
 
