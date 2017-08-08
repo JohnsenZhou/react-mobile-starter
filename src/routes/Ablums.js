@@ -15,13 +15,14 @@ function Ablums({ location, ablums }) {
           <AlbumsList {...albumsListProps} />
         </ul>
       </div>
-      { ablums.showProgress ? <CircularProgress className="my-progress" /> : ''}
+      { ablums.loading ? <CircularProgress className="my-progress" /> : ''}
     </Layout>
   );
 }
 
 function mapStateToProps(state) {
-  const ablums = { ...state.ablums };
+  const loading = state.loading.models.ablums;
+  const ablums = { ...state.ablums, loading };
   return { ablums };
 }
 

@@ -15,14 +15,15 @@ function IndexPage({ location, posts }) {
         <ul>
           <PostsList {...postsListProps} />
         </ul>
-        { posts.showProgress ? <CircularProgress className="my-progress" /> : ''}
+        { posts.loading ? <CircularProgress className="my-progress" /> : ''}
       </div>
     </Layout>
   );
 }
 
 function mapStateToProps(state) {
-  const posts = { ...state.posts };
+  const loading = state.loading.models.posts;
+  const posts = { ...state.posts, loading };
   return { posts };
 }
 

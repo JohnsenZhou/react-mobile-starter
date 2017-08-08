@@ -1,0 +1,72 @@
+.list_id_detail {
+  display: inline-block;
+  width: 1.8em;
+  height: 1.8em;
+  margin-bottom: .3em;
+  line-height: 1.8em;
+  background: #2196f3;
+  border-radius: 25px 25px;
+  color: #fff;
+}
+.list_title_detail {
+  display: block;
+  padding-left: .6em;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: left;
+}
+.post_body_detail {
+  margin-top: .8em;
+  text-align: left;
+  /* text-indent: 1em; */
+  overflow : hidden;
+  /* 多行文本截断 */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+.edit_btn {
+  margin-top: 1.5em;
+}
+:global .comment-title {
+  float: left;
+  padding-left: 2em;
+  font-weight: 600;
+  background-size: 1.6em 1.5em;
+  background-repeat: no-repeat;
+  vertical-align: middle; 
+  background-image: url('../../assets/img/comment_pressed.png')
+}
+:global .comment-list {
+  margin-top: 3em;
+}
+:global .comment-item {
+  margin: 1.4em auto;
+  text-align: left;
+}
+:global .comment-item img {
+  width: 3em;
+  height: 3em;
+}
+:global .comment-user {
+  /* 图片后面的文字垂直居中 */
+  padding-left: 1em;
+  height: 3em;
+  line-height: 3em;
+  vertical-align: top;
+  /* 超出部分... */
+  width: 70%;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+:global .comment-hr {
+  height: 2px;
+  margin-top: 1em;
+  border: none;
+  background: -webkit-linear-gradient(left,#fafafa,#ffe4bb,#fafafa);
+}
+.dialogTitle {
+  text-align: left;
+}
