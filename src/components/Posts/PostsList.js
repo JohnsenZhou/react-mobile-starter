@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'dva/router';
-import styles from './postsList.css';
+import styles from './posts.css';
 
 class PostsList extends Component {
   constructor(props) {
@@ -18,7 +18,15 @@ class PostsList extends Component {
         {postsList.map((item => {
           return (
             <li className="list-item clearfix" key={item.id}>
-              <Link to={`/post/${item.id}`} className="linkStyle">
+              <Link
+                to={{
+                  pathname: '/post-detail',
+                  query: {
+                    postId: item.id,
+                  },
+                }} 
+                className="linkStyle"
+              >
                 <span className="list-id">{item.id}</span>
                 <span className="list-title">{item.title}</span>
                 <p className="post-body">{item.body}</p>

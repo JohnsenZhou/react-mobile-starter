@@ -15,13 +15,14 @@ function Users({ location, users }) {
           <UsersList {...usersListProps} />
         </ul>
       </div>
-      { users.showProgress ? <CircularProgress className="my-progress" /> : ''}
+      { users.loading ? <CircularProgress className="my-progress" /> : ''}
     </Layout>
   );
 }
 
 function mapStateToProps(state) {
-  const users = { ...state.users };
+  const loading = state.loading.models.users;
+  const users = { ...state.users, loading };
   return { users };
 }
 

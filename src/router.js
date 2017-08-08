@@ -1,6 +1,5 @@
 import React from 'react';
 import { Router } from 'dva/router';
-import Ablums from './routes/Ablums';
 
 const cached = {};
 
@@ -40,6 +39,16 @@ function RouterConfig({ history, app }) {
         require.ensure([], (require) => {
           registerModel(app, require('./models/users'));
           cb(null, require('./routes/Users'));
+        });
+      },
+    },
+    {
+      path: '/post-detail',
+      name: 'post-detail',
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          registerModel(app, require('./models/posts'));
+          cb(null, require('./routes/PostDetail'));
         });
       },
     },

@@ -20,7 +20,7 @@ html, body, :global(#root) {
   height: 0;
   clear: both;
 }
-.clear {
+:global .clear {
   clear: both;
 }
 :global .list-item {
@@ -82,6 +82,7 @@ html, body, :global(#root) {
   position: fixed;
   top: 50%;
   left: 50%;
+  z-index: 9999;
   transform: translateX(-50%);
 }
 :global .linkStyle {
