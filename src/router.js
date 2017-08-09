@@ -14,11 +14,11 @@ function RouterConfig({ history, app }) {
   const routes = [
     {
       path: '/',
-      name: 'IndexPage',
+      name: 'Posts',
       getComponent(nextState, cb) {
         require.ensure([], (require) => {
           registerModel(app, require('./models/posts'));
-          cb(null, require('./routes/IndexPage'));
+          cb(null, require('./routes/Posts'));
         });
       },
     },
@@ -43,7 +43,49 @@ function RouterConfig({ history, app }) {
       },
     },
     {
-      path: '/post-detail',
+      path: '/users/:userId',
+      name: 'user-detail',
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          registerModel(app, require('./models/users'));
+          cb(null, require('./routes/UserDetail'));
+        });
+      },
+      childRoutes: [
+        {
+          path: 'todos',
+          name: 'user-todos',
+          getComponent(nextState, cb) {
+            require.ensure([], (require) => {
+              registerModel(app, require('./models/users'));
+              cb(null, require('./routes/UserTodos'));
+            });
+          },
+        },
+        {
+          path: 'ablums',
+          name: 'user-ablums',
+          getComponent(nextState, cb) {
+            require.ensure([], (require) => {
+              registerModel(app, require('./models/users'));
+              cb(null, require('./routes/UserAblums'));
+            });
+          },
+        },
+        {
+          path: 'posts',
+          name: 'user-posts',
+          getComponent(nextState, cb) {
+            require.ensure([], (require) => {
+              registerModel(app, require('./models/users'));
+              cb(null, require('./routes/UserPosts'));
+            });
+          },
+        },
+      ],
+    },
+    {
+      path: '/posts/:postId',
       name: 'post-detail',
       getComponent(nextState, cb) {
         require.ensure([], (require) => {
@@ -53,7 +95,7 @@ function RouterConfig({ history, app }) {
       },
     },
     {
-      path: '/album-detail',
+      path: '/albums/:albumId',
       name: 'album-detail',
       getComponent(nextState, cb) {
         require.ensure([], (require) => {

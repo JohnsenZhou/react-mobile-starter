@@ -1,4 +1,5 @@
 import * as jsonService from '../services/jsonholder';
+import pathToRegexp from 'path-to-regexp';
 
 export default {
   namespace: 'posts',
@@ -35,8 +36,8 @@ export default {
       if (!data.data) return;
       yield put({ type: 'save', payload: { postsList: data.data, showProgress: false } });
     },
-    *fetchDetail({ payload: query }, { call, put }) {
-      const id = query.postId;
+    *fetchDetail({ payload: postId }, { call, put }) {
+      const id = postId;
       const { data } = yield call(jsonService.getPostDetail, id);
       const commentRes = yield call(jsonService.getPostComment, id);
       if (!data.data) return;
@@ -72,12 +73,15 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
+        const match = pathToRegexp('/posts/:postId').exec(pathname);
+        if (match) {
+          const postId = match[1];
+          dispatch({ type: 'resetSpinner' });
+          dispatch({ type: 'fetchDetail', payload: postId });
+        }
         if (pathname === '/') {
           dispatch({ type: 'resetSpinner' });
           dispatch({ type: 'fetch', payload: query });
-        } else if (pathname === '/post-detail') {
-          dispatch({ type: 'resetSpinner' });
-          dispatch({ type: 'fetchDetail', payload: query });
         }
       });
     },

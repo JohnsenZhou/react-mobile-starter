@@ -1,0 +1,30 @@
+.user_detail {
+  margin-top: 1em;
+  text-align: left;
+}
+.user_detail p {
+  padding-bottom: .4em;
+}
+.phone, .address, .email {
+  padding-left: 1.8em;
+  background-size: 1.6em 1.4em;
+  background-repeat: no-repeat;
+  vertical-align: middle; 
+}
+.phone {
+  background-image: url('../../assets/img/mobilephone.png');
+}
+.address {
+  background-image: url('../../assets/img/coordinates.png');
+}
+.email {
+  background-image: url('../../assets/img/mail.png');
+}
+.read_more {
+  float: right;
+  padding: .2em .6em;
+  font-weight: 500;
+  background: #2196f3;
+  border-radius: 4px;
+  color: #fff;
+}
