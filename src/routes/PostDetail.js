@@ -27,7 +27,7 @@ function PostDetail({ dispatch, location, posts }) {
     },
   };
   return (
-    <Layout {...location}>
+    <Layout location={location}>
       <div className="normal">
         <ul>
           <PostDetailView {...postDetailProps} />

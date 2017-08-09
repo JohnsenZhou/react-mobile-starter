@@ -10,7 +10,7 @@ function IndexPage({ location, posts }) {
     postsList: posts.postsList,
   };
   return (
-    <Layout {...location}>
+    <Layout location={location}>
       <div className="normal">
         <ul>
           <PostsList {...postsListProps} />

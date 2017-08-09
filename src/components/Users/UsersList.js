@@ -18,7 +18,7 @@ class UsersList extends Component {
         {usersList.map((item) => {
           return (
             <li className="list-item clearfix" key={item.id}>
-              <Link to={`users/${item.id}/todos`} className="linkStyle">
+              <Link to={`/users/${item.id}/todos`} className="linkStyle">
                 <div>
                   <span className="list-id">{item.id}</span>
                   <span className="list-title">{item.name}</span>

@@ -9,7 +9,7 @@ function AblumDetail({ dispatch, location, ablums }) {
     albumDetail: ablums.ablumDetail,
   };
   return (
-    <Layout {...location}>
+    <Layout location={location}>
       <div className="normal">
         <ul>
           <AlbumDetailView {...ablumsDetailProps} />

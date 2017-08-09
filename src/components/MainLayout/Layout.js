@@ -26,18 +26,20 @@ class ButtonAppBar extends Component {
       appTitle: '主页',
       openDrawer: false,
     };
-    console.log(this.props);
+    console.log(this.props.location)
+    console.log(this.props.location.pathname.split('/'));
   }
 
-  setTitle = (num) => {
-    switch(num) {
-      case 1:
+  componentWillMount() {
+    const pathName = this.props.location.pathname.split('/');
+    switch(pathName[1]) {
+      case '' || 'posts':
         this.setState({ appTitle: '主页' });
         break;
-      case 2:
+      case 'albums':
         this.setState({ appTitle: '相册' });
         break;
-      case 3:
+      case 'users':
         this.setState({ appTitle: '用户中心' });
         break;
     }
@@ -86,15 +88,15 @@ class ButtonAppBar extends Component {
               </Toolbar>
             </AppBar>
             <List className={styles.list} disablePadding>
-              <ListItem button onClick={() => { this.setTitle(1) }}>
+              <ListItem button>
                 <span className={styles.title}><HomeIcon /><Link to="/">主页</Link></span>
               </ListItem>
               <Divider />
-              <ListItem button onClick={() => { this.setTitle(2) }}>
+              <ListItem button>
                 <span className={styles.title}><PhotoIcon /><Link to="/albums">相册</Link></span>
               </ListItem>
               <Divider />
-              <ListItem button onClick={() => { this.setTitle(3) }}>
+              <ListItem button>
                 <span className={styles.title}><PsrsonIcon /><Link to="/users">用户中心</Link></span>
               </ListItem>
               <Divider />

@@ -11,7 +11,7 @@ function UserDetail({ dispatch, location, users, children }) {
   };
   const userInfo = users.userDetail;
   return (
-    <Layout {...location}>
+    <Layout location={location}>
       <div className="normal">
         {
         userInfo.address ? 
