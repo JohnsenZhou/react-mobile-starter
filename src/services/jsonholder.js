@@ -1,48 +1,48 @@
 import request from '../utils/request';
 
-export async function getPostsList() {
+export function getPostsList() {
   return request('/replace/posts');
 }
 
-export async function getPostDetail(id) {
+export function getPostDetail(id) {
   return request(`/replace/posts/${id}`);
 }
 
-export async function updatePostDetail(values) {
+export function updatePostDetail(values) {
   return request(`/replace/posts/${values.id}`, {
     method: 'PUT',
     data: values,
   });
 }
 
-export async function getPostComment(id) {
+export function getPostComment(id) {
   return request(`/replace/posts/${id}/comments`);
 }
 
-export async function getUsers() {
+export function getUsers() {
   return request('/replace/users');
 }
 
-export async function getUserDetail(userId) {
+export function getUserDetail(userId) {
   return request(`/replace/users/${userId}`);
 }
 
-export async function getUserTodoList(userId) {
+export function getUserTodoList(userId) {
   return request(`/replace/users/${userId}/todos`);
 }
 
-export async function getUserPostList(userId) {
+export function getUserPostList(userId) {
   return request(`/replace/users/${userId}/posts`);
 }
 
-export async function getUserAlbumsList(userId) {
+export function getUserAlbumsList(userId) {
   return request(`/replace/users/${userId}/albums`);
 }
 
-export async function getAlbums() {
+export function getAlbums() {
   return request('/replace/albums');
 }
 
-export async function getAlbumDetail(id) {
+export function getAlbumDetail(id) {
   return request(`/replace/albums/${id}/photos`);
 }

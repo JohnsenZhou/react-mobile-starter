@@ -41,7 +41,6 @@ function PostDetail({ dispatch, location, posts }) {
 function mapStateToProps(state) {
   const loading = state.loading.models.posts;
   const posts = { ...state.posts, loading };
-  console.log(posts)
   return { posts };
 }
 

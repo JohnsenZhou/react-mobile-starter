@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'dva/router';
 import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
-import { TextField, Button, Divider } from 'material-ui';
+import { TextField, Button } from 'material-ui';
 import styles from './posts.css';
 
 class PostDetailView extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
     this.state = {
       title: '',
       body: '',
