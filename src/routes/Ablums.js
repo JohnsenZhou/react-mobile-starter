@@ -9,7 +9,7 @@ function Ablums({ location, ablums }) {
     albumsList: ablums.ablumsList,
   };
   return (
-    <Layout {...location}>
+    <Layout location={location}>
       <div className="normal">
         <ul>
           <AlbumsList {...albumsListProps} />

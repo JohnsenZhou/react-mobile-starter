@@ -9,7 +9,7 @@ function Users({ location, users }) {
     usersList: users.usersList,
   };
   return (
-    <Layout {...location}>
+    <Layout location={location}>
       <div className="normal">
         <ul>
           <UsersList {...usersListProps} />

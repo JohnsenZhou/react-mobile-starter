@@ -50,30 +50,4 @@
   white-space: nowrap;
   font-weight: 500;
 }
-.user_todo_list {
-  margin-bottom: 1em;
-}
-.user_todo_item {
-  display: flex;
-  justify-content: space-between;
-}
-.todo_title {
-  margin-right: 1.5em;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  text-align: left;
-}
-.todo_title_content {
-  vertical-align: top;
-  line-height: 1.5em;
-  height: 1.5em;
-}
-.todo_finish img {
-  width: 1.5em;
-  height: 1.5em;
-}
-.checkbox {
-  width: 1.5em;
-  height: 1em;
-}
+
