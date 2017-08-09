@@ -9,7 +9,6 @@ export default {
     userPosts: [],
     userAblums: [],
     userDetail: {},
-    showProgress: true,
   },
   reducers: {
     save(state, { payload: { usersList, showProgress } }) {
@@ -62,7 +61,6 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         const match = pathToRegexp('/users/:userId/*').exec(pathname);
-        console.log(match);
         if (match) {
           const userId = match[1];
           dispatch({ type: 'fetchUserDetail', payload: userId });
