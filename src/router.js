@@ -52,6 +52,16 @@ function RouterConfig({ history, app }) {
         });
       },
     },
+    {
+      path: '/album-detail',
+      name: 'album-detail',
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          registerModel(app, require('./models/ablums'));
+          cb(null, require('./routes/AblumDetail'));
+        });
+      },
+    },
   ];
 
   return <Router history={history} routes={routes} />;

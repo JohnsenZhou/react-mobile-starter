@@ -1,0 +1,32 @@
+.albun_png {
+  width: 5em;
+}
+.album_img {
+  width: 3em;
+  height: 3em;
+}
+.album_detail_title {
+  padding-left: 1em;
+  height: 3em;
+  line-height: 3em;
+  vertical-align: top;
+  /* 超出部分... */
+  width: 70%;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.album_img_detail {
+  width: 100%;
+  margin-bottom: 1em;
+}
+.album_img_title {
+  text-align: center;
+  font-weight: 600;
+}
+.dialogTitle {
+  text-align: left;
+}
