@@ -15,24 +15,16 @@ class AlbumsList extends Component {
 
     return (
       <div>
-        {albumsList.map((item => {
+        {albumsList.map((item) => {
           return (
             <li className="list-item clearfix" key={item.id}>
-              <Link
-                to={{
-                  pathname: '/album-detail',
-                  query: {
-                    albumId: item.id,
-                  },
-                }}
-                className="linkStyle"
-              >
+              <Link to={`/albums/${item.id}`} className="linkStyle">
                 <span className="list-id">{item.id}</span>
                 <span className="list-title">{item.title}</span>
               </Link>
             </li>
           );
-        }))}
+        })}
       </div>
     );
   }

@@ -1,7 +1,7 @@
 {
-  "name": "react-mobile-scaffold",
+  "name": "react-mobile-starter",
   "version": "1.0.0",
-  "description": "this is a react mobile scaffold",
+  "description": "this is a react mobile starter",
   "author": "Johnsen",
   "private": true,
   "scripts": {

@@ -15,25 +15,17 @@ class PostsList extends Component {
 
     return (
       <div>
-        {postsList.map((item => {
+        {postsList.map((item) => {
           return (
             <li className="list-item clearfix" key={item.id}>
-              <Link
-                to={{
-                  pathname: '/post-detail',
-                  query: {
-                    postId: item.id,
-                  },
-                }} 
-                className="linkStyle"
-              >
+              <Link to={`/posts/${item.id}`} className="linkStyle">
                 <span className="list-id">{item.id}</span>
                 <span className="list-title">{item.title}</span>
                 <p className="post-body">{item.body}</p>
               </Link>
             </li>
           )
-        }))}
+        })}
       </div>
     )
   }
