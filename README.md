@@ -7,11 +7,11 @@
 这个项目是介于 **[vue-mobile-starter(vue版本)](https://github.com/JohnsenZhou/vue-mobile-starter)** 之后并且完全仿照 **vue-mobile-starter** 功能、设计的 **react版本**。这个版本里引进了 **dva** 作为开发脚手架，更 **vue-cli new XXX** 出来是同一概念。使用 **dva** 作为开发框架主要是我司的 **react** 大部分由 **dva** 搭建，经受住了线上压力的考验，有兴趣的同学可以深入研究。以下是 **dva** 的官方说法：
 
 > 经过一段时间的自学或培训，大家应该都能理解 redux 的概念，并认可这种数据流的控制可以让应用更可控，以及让逻辑更清晰。
->
+> 
 > 但随之而来通常会有这样的疑问：概念太多，并且 reducer, saga, action 都是分离的（分文件）。
->
+> 
 > 这带来的问题是：
->
+> 
 > 编辑成本高，需要在 reducer, saga, action 之间来回切换
 > 
 > 不便于组织业务模型 (或者叫 domain model) 。比如我们写了一个 userlist 之后，要写一个 productlist，需要复制很多文件。
