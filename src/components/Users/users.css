@@ -65,3 +65,7 @@
   width: 1.5em;
   height: 1em;
 }
+
+.user_detail_hide {
+  display: none;
+}

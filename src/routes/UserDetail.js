@@ -5,6 +5,8 @@ import Layout from '../components/MainLayout/Layout';
 import UserDetailTabs from '../components/Users/UserDetailTabs';
 import styles from './userDetail.css';
 
+const imgUrl = require(`../assets/img/user/emoji-${Math.ceil((Math.random() * 12))}.png`);
+
 function UserDetail({ dispatch, location, users, children }) {
   const userDetailProps = {
 
@@ -17,7 +19,7 @@ function UserDetail({ dispatch, location, users, children }) {
         userInfo.address ? 
           <div>
             <div className={styles.user_datail_item}>
-              <img src={require(`../assets/img/user/emoji-${Math.ceil((Math.random() * 12))}.png`)} alt="" />
+              <img src={imgUrl} alt="" />
               <span className={styles.user_detail_name}>{userInfo.name}</span>
               <p>{userInfo.address.suite} - {userInfo.address.street} - {userInfo.address.city}</p>
               <p>{userInfo.phone}</p>

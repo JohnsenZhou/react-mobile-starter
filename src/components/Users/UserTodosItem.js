@@ -25,7 +25,6 @@ class UserTodosItem extends Component {
 
   render() {
     const { item } = this.props;
-    console.log('dfs')
     return (
       <li className={styles.user_todo_list}>
         <div className={styles.user_todo_item}>

@@ -6,33 +6,25 @@ class UsersList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      showDetailClass: false,
     };
   }
 
   render() {
-    const { usersList } = this.props;
+    const { item } = this.props;
 
     return (
-      <div>
-        {usersList.map((item) => {
-          return (
-            <li className="list-item clearfix" key={item.id}>
-              <Link to={`/users/${item.id}/todos`} className="linkStyle">
-                <div>
-                  <span className="list-id">{item.id}</span>
-                  <span className="list-title">{item.name}</span>
-                </div>
-                <div className={styles.user_detail}>
-                  <p className={styles.phone}>{item.phone}</p>
-                  <p className={styles.email}>{item.email}</p>
-                  <p className={styles.address}>{item.address.city}<span className={styles.read_more}>查看更多</span></p>
-                </div>
-              </Link>
-            </li>
-          );
-        })}
-      </div>
+      <li className="list-item clearfix" key={item.id} onClick={() => this.setState({showDetailClass: !this.state.showDetailClass})}>
+        <div>
+          <span className="list-id">{item.id}</span>
+          <span className="list-title">{item.name}</span>
+        </div>
+        <div className={this.state.showDetailClass ? styles.user_detail : styles.user_detail_hide}>
+          <p className={styles.phone}>{item.phone}</p>
+          <p className={styles.email}>{item.email}</p>
+          <p className={styles.address}>{item.address.city}<Link to={`/users/${item.id}/todos`} className="linkStyle"><span className={styles.read_more}>查看更多</span></Link></p>
+        </div>
+      </li>
     );
   }
 }
