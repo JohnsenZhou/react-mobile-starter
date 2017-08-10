@@ -88,3 +88,6 @@ html, body, :global(#root) {
 :global .linkStyle {
   color: #2c3e50;
 }
+:global .user-list-item {
+  margin: 0 0 1em 0;
+}
