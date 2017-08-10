@@ -26,8 +26,6 @@ class ButtonAppBar extends Component {
       appTitle: '主页',
       openDrawer: false,
     };
-    console.log(this.props.location)
-    console.log(this.props.location.pathname.split('/'));
   }
 
   componentWillMount() {
