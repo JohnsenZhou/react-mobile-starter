@@ -5,14 +5,16 @@ import Layout from '../components/MainLayout/Layout';
 import UsersList from '../components/Users/UsersList';
 
 function Users({ location, users }) {
-  const usersListProps = {
-    usersList: users.usersList,
-  };
+  const { usersList } = users;
   return (
     <Layout location={location}>
       <div className="normal">
         <ul>
-          <UsersList {...usersListProps} />
+          {usersList.map((item) => {
+            return (
+              <UsersList item={item} key={item.id} />
+            );
+          })}
         </ul>
       </div>
       { users.loading ? <CircularProgress className="my-progress" /> : ''}
