@@ -1,16 +1,24 @@
 import React from 'react';
 import { connect } from 'dva';
+import { Link } from 'dva/router';
 import { CircularProgress } from 'material-ui/Progress';
-import Layout from '../components/MainLayout/Layout';
-import PostDetailView from '../components/Posts/PostDetailView';
 
-function UserPosts({ dispatch, location, users, children }) {
-  const userTodosProps = {
+function UserPosts({ users }) {
+  const postsList = users.userPosts;
 
-  };
   return (
-    <div className="normal">
-      i'm posts
+    <div>
+      {postsList.map((item) => {
+        return (
+          <li className="list-item clearfix user-list-item" key={item.id}>
+            <Link to={`/posts/${item.id}`} className="linkStyle">
+              <span className="list-id">{item.id}</span>
+              <span className="list-title">{item.title}</span>
+              <p className="post-body">{item.body}</p>
+            </Link>
+          </li>
+        );
+      })}
       { users.loading ? <CircularProgress className="my-progress" /> : ''}
     </div>
   );

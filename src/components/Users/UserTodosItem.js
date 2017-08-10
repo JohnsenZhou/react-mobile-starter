@@ -7,20 +7,13 @@ class UserTodosItem extends Component {
     super(props);
     this.state = {
       checked: this.props.item.completed,
-      imgUrl: this.props.item.completed ? require('../../assets/img/user/true.png') : require('../../assets/img/user/false.png'),
     };
-  }
-
-  getTrueOrFalseImg = () => {
-    const imgUrl = this.state.checked ? require('../../assets/img/user/true.png') : require('../../assets/img/user/false.png');
-    this.setState({ imgUrl });
   }
 
   handleCheck = () => {
     this.setState({
       checked: !this.state.checked,
     });
-    this.getTrueOrFalseImg();
   }
 
   render() {
@@ -32,12 +25,13 @@ class UserTodosItem extends Component {
             <Checkbox
               checked={this.state.checked}
               value="completed"
+              style={{ height: 20 }}
               onClick={() => this.handleCheck()}
             />
             <span className={styles.todo_title_content}>{item.title}</span>
           </div>
           <div className={styles.todo_finish}>
-            <img src={this.state.imgUrl} alt="" />
+            <img src={this.state.checked ? require('../../assets/img/user/true.png') : require('../../assets/img/user/false.png')} alt="" />
           </div>
         </div>
       </li>
