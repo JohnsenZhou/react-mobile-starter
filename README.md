@@ -1,4 +1,4 @@
-# react-mobile-starter
+# react-mobile-starter &middot;  [![PyPI](https://img.shields.io/pypi/status/Django.svg)]()  [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/JohnsenZhou/react-mobile-starter/blob/master/LICENSE)
 
 
 > 基于 react + redux + react-router 构建的移动端单页微应用，适合于react、redux、react-router核心概念的理解与掌握。
