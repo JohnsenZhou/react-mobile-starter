@@ -4,7 +4,7 @@
 > 基于 react + redux + react-router 构建的移动端单页微应用，适合于react、redux、react-router核心概念的理解与掌握。
 
 ## 前言
-这个项目是介于 **[vue-mobile-starter(vue版本)](https://github.com/JohnsenZhou/vue-mobile-starter)** 之后并且完全仿照 **vue-mobile-starter** 功能、设计的 **react版本**。这个版本里引进了 **dva** 作为开发脚手架，跟 **vue-cli new XXX** 出来是同一概念。使用 **dva** 作为开发框架主要原因之一是我司的 **react 项目** 大部分由 **dva 框架** 搭建，而且全部都经受住了线上压力的考验，有兴趣的同学可以深入研究，可以带入到公司项目的生产中去。以下是 **dva** 的官方说法：
+这个项目是介于 **[vue-mobile-starter(vue版本)](https://github.com/JohnsenZhou/vue-mobile-starter)** 之后并且完全仿照 **vue-mobile-starter** 功能、设计的 **react版本**。这个版本里引进了 **dva** 作为开发脚手架,使用 **dva** 作为开发框架主要原因之一是我司的 **react 项目** 大部分由 **dva 框架** 搭建，而且全部都经受住了线上压力的考验，有兴趣的同学可以深入研究，可以带入到公司项目的生产中去。以下是 **dva** 的官方说法：
 
 > 经过一段时间的自学或培训，大家应该都能理解 redux 的概念，并认可这种数据流的控制可以让应用更可控，以及让逻辑更清晰。
 > 
