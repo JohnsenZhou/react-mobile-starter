@@ -1,5 +1,5 @@
 {
-  "name": "vue-mobile-starter",
+  "name": "react-mobile-starter",
   "script": "server.js",
   "env": {
     "NODE_ENV": "production"
