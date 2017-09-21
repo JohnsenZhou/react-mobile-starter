@@ -21,7 +21,8 @@
     "material-ui": "^1.0.0-beta.3",
     "material-ui-icons": "^1.0.0-alpha.19",
     "react": "^15.4.0",
-    "react-dom": "^15.4.0"
+    "react-dom": "^15.4.0",
+    "react-lazyload": "^2.2.7"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
