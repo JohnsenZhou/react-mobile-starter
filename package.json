@@ -23,6 +23,12 @@
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-lazyload": "^2.2.7"
+    "winston": "^2.3.1",
+    "compression": "^1.7.0",
+    "express": "^4.15.3",
+    "express-winston": "^2.4.0",
+    "helmet": "^3.8.1",
+    "http-proxy-middleware": "^0.17.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
